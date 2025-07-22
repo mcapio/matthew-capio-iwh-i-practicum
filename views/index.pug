@@ -9,8 +9,11 @@ html
       .cards
         each obj in data
           .card
-            h2.card_name #{obj.properties.sport_team}
-            p.card_sport #{obj.properties.sport}
-            p.card_league #{obj.properties.league}
+            h2= obj.properties.sport_team
+            p Sport: #{obj.properties.sport}
+            p League: #{obj.properties.league}
+            // Link to update page for this object
+            a(href=`/update-cobj?id=${obj.id}`) Update
     else
       p No custom object data found.
+    a(href="/create-cobj") Create New Team

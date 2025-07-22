@@ -1,0 +1,21 @@
+doctype html 
+html(lang="en")
+    head 
+        title Update sport team info 
+        link(rel="stylesheet", href="/css/style.css")
+    body 
+        .cards
+            .card
+                p.card_name Sport Team: #{sportTeam}
+                p.card_sport Sport: #{sport}
+                p.card_league League: #{league}
+                form(method="POST", action="/update-cobj")
+                    label(for="sport_team") Sport Team
+                    input(type="text", name="sport_team", value=sportTeam required)
+                    label(for="sport") Sport
+                    input(type="text", name="sport", value=sport required)
+                    label(for="league") League
+                    input(type="text", name="league", value=league required)
+                    if id
+                      input(type="hidden", name="id", value=id)
+                    input(type="submit", value="Submit")
