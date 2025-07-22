@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    if data && data.length
+      .cards
+        each obj in data
+          .card
+            h2= obj.properties.sport_team
+            p Sport: #{obj.properties.sport}
+            p League: #{obj.properties.league}
+            // Link to update page for this object
+            a(href=`/update-cobj?id=${obj.id}`) Update
+    else
+      p No custom object data found.
+    a(href="/create-cobj") Create New Team
