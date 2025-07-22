@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    if data && data.length
+      .cards
+        each obj in data
+          .card
+            h2.card_name #{obj.properties.sport_team}
+            p.card_sport #{obj.properties.sport}
+            p.card_league #{obj.properties.league}
+    else
+      p No custom object data found.
